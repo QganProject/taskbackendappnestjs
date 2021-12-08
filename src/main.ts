@@ -10,7 +10,7 @@ async function bootstrap() {
   app.enableCors(); // enable access for frontend
   app.useGlobalPipes(new ValidationPipe()); // for validating requests
   app.useGlobalInterceptors(new TransformInterceptor()); // added for serialization of sensitive info
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 3000;
   await app.listen(port);
   logger.log(`Application listening on port ${port}`);
 }
