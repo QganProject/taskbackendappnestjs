@@ -5,7 +5,7 @@ COPY package*.json .
 RUN yarn
 COPY . .
 RUN yarn build
-EXPOSE 3000/udp
-EXPOSE 3000/tcp
+EXPOSE 8080/udp
+EXPOSE 8080/tcp
 CMD ["yarn", "start:prod"]
 
