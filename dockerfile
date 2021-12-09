@@ -1,10 +1,11 @@
 
 FROM node:16.13-alpine as build
 WORKDIR /app
-COPY package.json .
+COPY package*.json .
 RUN yarn
 COPY . .
 RUN yarn build
-EXPOSE 3000
+EXPOSE 3000/udp
+EXPOSE 3000/tcp
 CMD ["yarn", "start:prod"]
 
